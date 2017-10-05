@@ -9,6 +9,9 @@ import myown.themoviesdb.utils.NavigationController;
 
 /**
  * Created by Netaq on 10/5/2017.
+ *
+ * The SplashActivity is essentially the first activity which is loaded on the application launch.
+ * The handler waits for SPLASH_LENGTH amount of time and then calls Navigation Controller to start Main Activity.
  */
 
 public class SplashActivity extends AppCompatActivity {
