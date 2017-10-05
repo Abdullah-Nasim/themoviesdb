@@ -5,6 +5,10 @@ import android.os.Bundle;
 
 import myown.themoviesdb.R;
 
+/**
+ * Created by Netaq on 10/5/2017.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

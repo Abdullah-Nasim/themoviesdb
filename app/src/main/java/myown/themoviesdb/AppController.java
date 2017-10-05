@@ -2,6 +2,8 @@ package myown.themoviesdb;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 /**
  * Created by Netaq on 10/5/2017.
  */
@@ -17,6 +19,7 @@ public class AppController extends Application {
         super.onCreate();
 
         //Initializing Fresco
+        Fresco.initialize(this);
 
     }
 
