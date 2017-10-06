@@ -1,4 +1,4 @@
-package myown.themoviesdb.network.bals.interfaces;
+package myown.themoviesdb.interfaces;
 
 /**
  * Created by Netaq on 10/5/2017.

@@ -8,6 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Netaq on 10/5/2017.
+ *
+ * This class is responsible of configuring the Retrofit Rest Client
  */
 
 public class RestClient {

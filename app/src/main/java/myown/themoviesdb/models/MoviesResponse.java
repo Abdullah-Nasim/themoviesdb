@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Netaq on 10/5/2017.
+ *
+ * This class features the response of Popular Movies API.
  */
 
 public class MoviesResponse {

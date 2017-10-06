@@ -4,18 +4,21 @@ package myown.themoviesdb.network.bals;
 import myown.themoviesdb.Constants;
 import myown.themoviesdb.models.MovieDetailsResponse;
 import myown.themoviesdb.network.RestClient;
-import myown.themoviesdb.network.bals.interfaces.MoviesDetailsFetchListener;
+import myown.themoviesdb.interfaces.MoviesDetailsFetchListener;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
  * Created by Netaq on 10/5/2017.
+ *
+ * This business access layer is responsible to call the movie db API for getting movie details.
+ * In case of success or failure this BAL will notify the listener of respective interface about what ever event happens.
  */
 
 public class MoviesDetailsBAL {
 
-    public static void getMoviesDetails(String movieId, final MoviesDetailsFetchListener listener){
+    public static void getMoviesDetails(Integer movieId, final MoviesDetailsFetchListener listener){
 
         Call<MovieDetailsResponse> call = RestClient.getAdapter().getMovieDetails(movieId, Constants.API_KEY, "en-US");
 

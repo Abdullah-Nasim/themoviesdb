@@ -2,6 +2,8 @@ package myown.themoviesdb;
 
 /**
  * Created by Netaq on 10/5/2017.
+ *
+ * This class contains all of the constants which shall be used while developing the application.
  */
 
 public class Constants {

@@ -1,4 +1,4 @@
-package myown.themoviesdb.network.bals.interfaces;
+package myown.themoviesdb.interfaces;
 
 
 import myown.themoviesdb.models.MovieDetailsResponse;

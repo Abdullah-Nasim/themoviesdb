@@ -1,4 +1,4 @@
-package myown.themoviesdb.activities.adapters;
+package myown.themoviesdb.adapters;
 
 import android.content.Context;
 import android.net.Uri;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import myown.themoviesdb.Constants;
 import myown.themoviesdb.R;
-import myown.themoviesdb.activities.viewholders.MainRecyclerViewHolder;
+import myown.themoviesdb.adapters.viewholders.MainRecyclerViewHolder;
 import myown.themoviesdb.models.MoviesResponse;
 import myown.themoviesdb.utils.NavigationController;
 

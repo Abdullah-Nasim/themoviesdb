@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="myown.themoviesdb">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".AppController"
         android:allowBackup="true"
@@ -19,8 +21,11 @@
         </activity>
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.main_activity.MainActivity"
             android:label="@string/movies"/>
+        <activity
+            android:name=".activities.movie_details_activity.MovieDetailsActivity"
+            android:label="@string/movie_details"/>
 
     </application>
 

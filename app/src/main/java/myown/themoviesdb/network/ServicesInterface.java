@@ -9,7 +9,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
- * Created by Netaq on 9/14/2017.
+ * Created by Netaq on 10/5/2017.
  */
 
 
@@ -19,6 +19,6 @@ public interface ServicesInterface {
     Call<MoviesResponse> getPopularMovies(@Query("api_key") String api_key, @Query("language") String language, @Query("page") int page);
 
     @GET("movie/{movie_id}")
-    Call<MovieDetailsResponse> getMovieDetails(@Path("movie_id") String movie_id, @Query("api_key") String api_key, @Query("language") String language);
+    Call<MovieDetailsResponse> getMovieDetails(@Path("movie_id") Integer movie_id, @Query("api_key") String api_key, @Query("language") String language);
 
 }

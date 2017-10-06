@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="myown.themoviesdb.activities.MainActivity">
+    tools:context="myown.themoviesdb.activities.main_activity.MainActivity">
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/main_swipe_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         >
 
         <android.support.v7.widget.RecyclerView

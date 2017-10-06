@@ -3,13 +3,16 @@ package myown.themoviesdb.network.bals;
 import myown.themoviesdb.Constants;
 import myown.themoviesdb.models.MoviesResponse;
 import myown.themoviesdb.network.RestClient;
-import myown.themoviesdb.network.bals.interfaces.MoviesFetchListener;
+import myown.themoviesdb.interfaces.MoviesFetchListener;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
  * Created by Netaq on 10/5/2017.
+ *
+ * This business access layer is responsible to call the movie db API for getting popular movies list.
+ * In case of success or failure this BAL will notify the listener of respective interface about what ever event happens.
  */
 
 public class PopularMoviesBAL {
