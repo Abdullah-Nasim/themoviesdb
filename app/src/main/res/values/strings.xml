@@ -7,4 +7,15 @@
     <string name="server_error_messege">Unable to connect to the servers! Please try again later</string>
     <string name="movie_details">Movie Details</string>
     <string name="filter">Filter</string>
+    <string name="genres">Genres:</string>
+    <string name="home_page">Home Page:</string>
+    <string name="status">Status:</string>
+    <string name="budget">Budget:</string>
+    <string name="popularity">Popularity:</string>
+    <string name="release_date">Release Date:</string>
+    <string name="overview">Overview:</string>
+    <string name="min_year">Min Year</string>
+    <string name="max_year">Max Year</string>
+    <string name="apply">APPLY</string>
+    <string name="the_movie_db_logo">The Movie DB Logo</string>
 </resources>

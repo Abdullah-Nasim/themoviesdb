@@ -6,7 +6,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Min Year"/>
+                android:text="@string/min_year"/>
             <Spinner
                 android:id="@+id/min_year_spinner"
                 android:layout_width="match_parent"
@@ -39,7 +40,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Max Year"
+                android:text="@string/max_year"
                 android:textSize="18sp"/>
             <Spinner
                 android:id="@+id/max_year_spinner"
@@ -58,7 +59,7 @@
         android:layout_margin="15dp"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorAccent"
-        android:text="APPLY"
+        android:text="@string/apply"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

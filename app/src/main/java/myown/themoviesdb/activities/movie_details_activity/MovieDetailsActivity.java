@@ -20,7 +20,7 @@ import myown.themoviesdb.utils.Utils;
 /**
  * Created by Netaq on 10/5/2017.
  *
- * This class features the details of selected movie from the Main Recycler - Main Activity.
+ * This activity features the details of selected movie from the Main Recycler - Main Activity.
  * In this class all of the view components are assign their respective values.
  */
 

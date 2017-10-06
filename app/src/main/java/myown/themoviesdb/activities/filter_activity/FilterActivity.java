@@ -21,6 +21,9 @@ import myown.themoviesdb.models.MoviesResponse;
 
 /**
  * Created by Netaq on 10/6/2017.
+ *
+ * This activity features the filtration of movies array based on the min and max value of year selected by the user.
+ * The presenter class of this activity is responsible for implementing the functionality required for the filtering.
  */
 
 public class FilterActivity extends AppCompatActivity implements FilterActivityView{
