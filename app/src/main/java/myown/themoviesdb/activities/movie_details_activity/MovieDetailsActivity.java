@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ import myown.themoviesdb.models.MovieDetailsResponse;
 import myown.themoviesdb.utils.Utils;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This activity features the details of selected movie from the Main Recycler - Main Activity.
  * In this class all of the view components are assign their respective values.
@@ -53,6 +54,9 @@ public class MovieDetailsActivity extends AppCompatActivity implements MovieDeta
     @BindView(R.id.movie_overview)
     TextView movieOverview;
 
+    @BindView(R.id.movie_release_date)
+    TextView movieReleaseDate;
+
     @BindView(R.id.progress_layout)
     FrameLayout progressLayout;
 
@@ -73,6 +77,9 @@ public class MovieDetailsActivity extends AppCompatActivity implements MovieDeta
     }
 
     private void setupActivityTasks() {
+
+        //Setting up the back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Getting the movie ID from the intent added by MainRecyclerAdapter.
         Integer movieId = getIntent().getIntExtra(Constants.MOVIE_ID_EXTRA_KEY, 0);
@@ -102,6 +109,7 @@ public class MovieDetailsActivity extends AppCompatActivity implements MovieDeta
         moviePopularity.setText(String.valueOf(response.getPopularity()));
         movieImage.setImageURI(Uri.parse(Constants.IMAGE_BASE_URL + response.getPoster_path()));
         movieGenres.setText(Utils.processGenres(response.getGenres()));
+        movieReleaseDate.setText(response.getRelease_date());
 
         // The movie details are successfully loaded and assigned. So, we can hide the full screen progress layout.
         Utils.hideFullScreenProgress(progressLayout);
@@ -122,6 +130,18 @@ public class MovieDetailsActivity extends AppCompatActivity implements MovieDeta
     @Override
     public void onNetworkFailure() {
         Utils.noInternetException(MovieDetailsActivity.this);
+    }
+
+
+    //For the back navigation
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

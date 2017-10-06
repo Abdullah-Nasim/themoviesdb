@@ -5,7 +5,7 @@ import android.app.Application;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * The AppController is automatically called every time when the application is launched.
  * We will initialize all of the Application level dependencies in onCreate method of this class.

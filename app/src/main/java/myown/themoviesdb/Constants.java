@@ -1,11 +1,7 @@
 package myown.themoviesdb;
 
-import java.util.ArrayList;
-
-import myown.themoviesdb.models.MoviesResponse;
-
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This class contains all of the constants which shall be used while developing the application.
  */

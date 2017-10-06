@@ -12,7 +12,7 @@ import myown.themoviesdb.activities.movie_details_activity.MovieDetailsActivity;
 import myown.themoviesdb.models.MoviesResponse;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * Navigation Controller controls the navigation of the whole application.
  * In this class we can control the navigation according to our needs and can do the fragments transactions if any.

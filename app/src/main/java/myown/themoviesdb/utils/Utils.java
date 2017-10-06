@@ -13,7 +13,7 @@ import myown.themoviesdb.R;
 import myown.themoviesdb.models.MovieDetailsResponse;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This class contains the method which are widely used through out the application.
  * All of the methods in this class are static so that they can be easily accessed throughout the application where ever they are needed.

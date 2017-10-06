@@ -16,7 +16,7 @@ import myown.themoviesdb.models.MoviesResponse;
 import myown.themoviesdb.utils.NavigationController;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This Recycler Adapter is responsible for setting up the main recycler view in Main Activity.
  */
@@ -24,8 +24,8 @@ import myown.themoviesdb.utils.NavigationController;
 public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerViewHolder> {
 
 
-    ArrayList<MoviesResponse.Result> mDataSet;
-    Context mContext;
+    private ArrayList<MoviesResponse.Result> mDataSet;
+    private Context mContext;
 
     /**
      * This constructor is required to initialize the instance of Main Recycler Adapter.

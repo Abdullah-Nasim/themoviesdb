@@ -3,7 +3,7 @@ package myown.themoviesdb.models;
 import java.util.List;
 
 /**
- * Created by Netaq on 9/14/2017.
+ * Created by Abdullah on 9/14/2017.
  *
  * This class features the response model of Movie Details API.
  */
@@ -12,35 +12,31 @@ import java.util.List;
 
 public class MovieDetailsResponse {
 
-    public boolean adult;
-    public String backdrop_path;
-    public BelongsToCollection belongs_to_collection;
-    public Integer budget;
-    public List<Genre> genres;
-    public String homepage;
-    public int id;
-    public String imdb_id;
-    public String original_language;
-    public String original_title;
-    public String overview;
-    public double popularity;
-    public String poster_path;
-    public List<ProductionCompany> production_companies;
-    public List<ProductionCountry> production_countries;
-    public String release_date;
-    public long revenue;
-    public int runtime;
-    public List<SpokenLanguage> spoken_languages;
-    public String status;
-    public String tagline;
-    public String title;
-    public boolean video;
-    public double vote_average;
-    public int vote_count;
-
-    public String getBackdrop_path() {
-        return backdrop_path;
-    }
+    private boolean adult;
+    private String backdrop_path;
+    private BelongsToCollection belongs_to_collection;
+    private Integer budget;
+    private List<Genre> genres;
+    private String homepage;
+    private int id;
+    private String imdb_id;
+    private String original_language;
+    private String original_title;
+    private String overview;
+    private double popularity;
+    private String poster_path;
+    private List<ProductionCompany> production_companies;
+    private List<ProductionCountry> production_countries;
+    private String release_date;
+    private long revenue;
+    private int runtime;
+    private List<SpokenLanguage> spoken_languages;
+    private String status;
+    private String tagline;
+    private String title;
+    private boolean video;
+    private double vote_average;
+    private int vote_count;
 
     public Integer getBudget() {
         return budget;
@@ -52,14 +48,6 @@ public class MovieDetailsResponse {
 
     public int getId() {
         return id;
-    }
-
-    public String getOriginal_language() {
-        return original_language;
-    }
-
-    public String getOriginal_title() {
-        return original_title;
     }
 
     public String getOverview() {
@@ -78,14 +66,6 @@ public class MovieDetailsResponse {
         return release_date;
     }
 
-    public long getRevenue() {
-        return revenue;
-    }
-
-    public int getRuntime() {
-        return runtime;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -102,40 +82,40 @@ public class MovieDetailsResponse {
         return homepage;
     }
 
-    public class BelongsToCollection
+    private class BelongsToCollection
     {
-        public int id;
-        public String name;
-        public String poster_path;
-        public String backdrop_path;
+        private int id;
+        private String name;
+        private String poster_path;
+        private String backdrop_path;
     }
 
     public class Genre
     {
-        public int id;
-        public String name;
+        private int id;
+        private String name;
 
         public String getName() {
             return name;
         }
     }
 
-    public class ProductionCompany
+    private class ProductionCompany
     {
-        public String name;
-        public int id;
+        private String name;
+        private int id;
     }
 
-    public class ProductionCountry
+    private class ProductionCountry
     {
-        public String iso_3166_1;
-        public String name;
+        private String iso_3166_1;
+        private String name;
     }
 
     public class SpokenLanguage
     {
-        public String iso_639_1;
-        public String name;
+        private String iso_639_1;
+        private String name;
     }
 
 }

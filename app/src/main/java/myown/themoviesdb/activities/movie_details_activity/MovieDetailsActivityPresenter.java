@@ -6,7 +6,7 @@ import myown.themoviesdb.models.MovieDetailsResponse;
 import myown.themoviesdb.network.bals.MoviesDetailsBAL;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This is the presenter class for the Movie Details Activity.
  * All of the functionality and app logic about the movie Details Activity is implemented in this class.

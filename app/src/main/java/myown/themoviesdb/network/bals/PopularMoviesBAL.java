@@ -9,7 +9,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This business access layer is responsible to call the movie db API for getting popular movies list.
  * In case of success or failure this BAL will notify the listener of respective interface about what ever event happens.

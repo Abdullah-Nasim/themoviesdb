@@ -1,21 +1,15 @@
 package myown.themoviesdb.activities.main_activity;
 
-import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import myown.themoviesdb.adapters.MainRecyclerAdapter;
 import myown.themoviesdb.interfaces.main_activity.MainActivityView;
 import myown.themoviesdb.models.MoviesResponse;
 import myown.themoviesdb.network.bals.PopularMoviesBAL;
 import myown.themoviesdb.interfaces.MoviesFetchListener;
-import myown.themoviesdb.utils.Utils;
-
-import static android.nfc.tech.MifareUltralight.PAGE_SIZE;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This is the presenter class for the Main Activity.
  * All of the functionality and app logic about the Main Activity is implemented in this class.
@@ -38,6 +32,10 @@ public class MainActivityPresenter {
         this.filterApplied = filterApplied;
     }
 
+    public void setCurrentPage(int currentPage) {
+        this.currentPage = currentPage;
+    }
+
     /**
      * This method is responsible for calling the Popular Movies BAL ( Business Access Layer ) to call the popular Movies API.
      * This method handles the success and failure cases specific to the network call.
@@ -51,6 +49,8 @@ public class MainActivityPresenter {
              */
             @Override
             public void onMoviesFetched(MoviesResponse response) {
+
+                currentPage = response.getPage();
 
                 mainActivityView.onMoviesFetched(response);
 
@@ -105,9 +105,7 @@ public class MainActivityPresenter {
                     // Check that if the user reaches the end of scroll.
                     if ( (visibleItemCount + firstVisibleItemPosition) >= totalItemCount)
                     {
-                        currentPage = currentPage + 1;
-
-                        PopularMoviesBAL.getPopularMovies(currentPage, new MoviesFetchListener() {
+                        PopularMoviesBAL.getPopularMovies(++currentPage, new MoviesFetchListener() {
 
                             /**
                              * This method is called when the BAL successfully fetches the movies list.
@@ -115,6 +113,8 @@ public class MainActivityPresenter {
                              */
                             @Override
                             public void onMoviesFetched(MoviesResponse response) {
+
+                                currentPage = response.getPage();
 
                                 mainActivityView.onPagination(response);
 
@@ -138,6 +138,23 @@ public class MainActivityPresenter {
                         });
                     }
                 }
+            }
+        });
+
+    }
+
+    public void onSwipeRefresh(SwipeRefreshLayout swipeRefreshLayout){
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                filterApplied = false;
+
+                currentPage = 1;
+
+                performMoviesFetch();
+
             }
         });
 

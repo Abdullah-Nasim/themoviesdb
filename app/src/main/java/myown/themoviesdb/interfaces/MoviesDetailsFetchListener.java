@@ -4,7 +4,7 @@ package myown.themoviesdb.interfaces;
 import myown.themoviesdb.models.MovieDetailsResponse;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  */
 
 public interface MoviesDetailsFetchListener extends GeneralNetworkListener{

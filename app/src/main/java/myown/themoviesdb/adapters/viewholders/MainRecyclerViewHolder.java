@@ -11,7 +11,7 @@ import butterknife.ButterKnife;
 import myown.themoviesdb.R;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  */
 
 public class MainRecyclerViewHolder extends RecyclerView.ViewHolder {

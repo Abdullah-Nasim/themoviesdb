@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,7 +21,7 @@ import myown.themoviesdb.interfaces.filter_activity.FilterActivityView;
 import myown.themoviesdb.models.MoviesResponse;
 
 /**
- * Created by Netaq on 10/6/2017.
+ * Created by Abdullah on 10/6/2017.
  *
  * This activity features the filtration of movies array based on the min and max value of year selected by the user.
  * The presenter class of this activity is responsible for implementing the functionality required for the filtering.
@@ -54,6 +55,9 @@ public class FilterActivity extends AppCompatActivity implements FilterActivityV
 
     private void setUpActivityTasks() {
 
+        //Setting up the back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // Getting the movies array from the intent.
         final ArrayList<MoviesResponse.Result> moviesArray = (ArrayList<MoviesResponse.Result>) getIntent().getSerializableExtra(Constants.UN_FILTERED_MOVIE_ARRAY_KEY);
 
@@ -63,7 +67,6 @@ public class FilterActivity extends AppCompatActivity implements FilterActivityV
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 // Calling the presenter to apply filter on data set.
                 filterActivityPresenter.applyFilterMoviesDataSet(moviesArray,minYearSpinner.getSelectedItem().toString(), maxYearSpinner.getSelectedItem().toString());
             }
@@ -102,4 +105,16 @@ public class FilterActivity extends AppCompatActivity implements FilterActivityV
         finish();
 
     }
+
+    //For the back navigation
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

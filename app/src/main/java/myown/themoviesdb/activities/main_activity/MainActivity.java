@@ -24,7 +24,7 @@ import myown.themoviesdb.utils.NavigationController;
 import myown.themoviesdb.utils.Utils;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * The Main Activity features the list of popular movies from the movie db API.
  * This class contains the implementation of recycler view which follows gird layout structure to display movies.
@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     @Override
     public void onMoviesFetched(MoviesResponse response) {
 
+        // Initializing moviesArray. This array will hold the complete list of movies loaded till this activity is running.
+        moviesArray = new ArrayList<>();
+
         moviesArray = response.getResults();
 
         mAdapter = new MainRecyclerAdapter(response.getResults(), MainActivity.this);
@@ -140,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
         Utils.noInternetException(MainActivity.this);
     }
 
+    // For creating a filter menu option
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.filter, menu);
@@ -150,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.action_filter){
 
+            //Check if the movies are still loading
             if(moviesArray.size()>0) {
                 NavigationController.startMoviesFilterActivity(MainActivity.this, moviesArray);
             }else{
@@ -166,21 +171,24 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
      */
     private void setupActivityTasks() {
 
-        // Initializing moviesArray. This array will hold the complete list of movies loaded till this activity is running.
-        moviesArray = new ArrayList<>();
-
         // Setting the filter applied to tell the presenter that filter is not applied yet.
         mainActivityPresenter.setFilterApplied(false);
 
-        swipeRefresh.setEnabled(false);
-
+        // Setting the swipe layout refreshing till the movies are fetched
         swipeRefresh.setRefreshing(true);
 
+        // Setting up the layout manager for thr main recycler
         mLayoutManager = new GridLayoutManager(MainActivity.this, 2, GridLayoutManager.VERTICAL, false);
 
+        // Calling the presenter to perform movies fetch
         mainActivityPresenter.performMoviesFetch();
 
+        // Calling the presenter to setup on scroll change listener
         mainActivityPresenter.loadMoreMovieItems(mainRecycler,swipeRefresh,mLayoutManager);
+
+        // Calling the presenter to setup on swipe refresh listener
+        mainActivityPresenter.onSwipeRefresh(swipeRefresh);
+
 
     }
 }

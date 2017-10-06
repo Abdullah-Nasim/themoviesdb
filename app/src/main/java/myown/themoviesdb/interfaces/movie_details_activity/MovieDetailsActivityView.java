@@ -5,7 +5,7 @@ import myown.themoviesdb.models.MovieDetailsResponse;
 import myown.themoviesdb.models.MoviesResponse;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This interface is implemented by Movie Details Activity.
  * Movie Details Activity implements the respective abstract method to provide the functionality when these events happens.

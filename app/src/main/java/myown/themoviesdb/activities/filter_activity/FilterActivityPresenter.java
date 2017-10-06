@@ -1,16 +1,14 @@
 package myown.themoviesdb.activities.filter_activity;
 
-import android.graphics.Movie;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 import myown.themoviesdb.interfaces.filter_activity.FilterActivityView;
 import myown.themoviesdb.models.MoviesResponse;
 
 /**
- * Created by Netaq on 10/5/2017.
+ * Created by Abdullah on 10/5/2017.
  *
  * This is the presenter class for the Filter Activity.
  * All of the functionality and app logic about the Filter Activity is implemented in this class.
