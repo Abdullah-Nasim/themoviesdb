@@ -22,10 +22,14 @@
 
         <activity
             android:name=".activities.main_activity.MainActivity"
-            android:label="@string/movies"/>
+            android:label="@string/movies"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".activities.movie_details_activity.MovieDetailsActivity"
             android:label="@string/movie_details"/>
+        <activity
+            android:name=".activities.filter_activity.FilterActivity"
+            android:label="@string/filter"/>
 
     </application>
 

@@ -35,10 +35,12 @@ public class PopularMoviesBAL {
                         listener.onMoviesFetched(response.body());
 
                     } else {
+                        //Popular Movies not fetched.
                         listener.onMoviesNotFetched();
                     }
 
                 } else {
+                    //Popular movies not fetched.
                     listener.onMoviesNotFetched();
                 }
 
@@ -49,10 +51,11 @@ public class PopularMoviesBAL {
 
                 //Check the type of Exception
                 if(t instanceof IllegalArgumentException){
-
+                    //Some other exception.
                     listener.onMoviesNotFetched();
 
                 } else {
+                    //No internet exception.
                     listener.onNetworkFailure();
                 }
 

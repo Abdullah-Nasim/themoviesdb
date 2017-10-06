@@ -1,5 +1,6 @@
 package myown.themoviesdb.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -47,7 +48,7 @@ public class MoviesResponse {
         this.results = results;
     }
 
-    public class Result
+    public class Result implements Serializable
     {
         public int vote_count;
         public Integer id;

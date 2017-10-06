@@ -1,5 +1,9 @@
 package myown.themoviesdb;
 
+import java.util.ArrayList;
+
+import myown.themoviesdb.models.MoviesResponse;
+
 /**
  * Created by Netaq on 10/5/2017.
  *
@@ -15,5 +19,11 @@ public class Constants {
     public static String BASE_URL = "https://api.themoviedb.org/3/";
 
     public static String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w342/";
+
+    public static String MOVIE_ID_EXTRA_KEY = "Movie_Id";
+
+    public static String UN_FILTERED_MOVIE_ARRAY_KEY = "Movies_Array";
+
+    public static String FILTERED_MOVIE_ARRAY_KEY = "Filtered_Movies_Array";
 
 }

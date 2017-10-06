@@ -28,13 +28,21 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerViewHo
     Context mContext;
 
     /**
-     *
+     * This constructor is required to initialize the instance of Main Recycler Adapter.
      * @param mDataSet is the list of movies returned by Get Popular Movies BAL.
      * @param mContext is the context of the parent activity which is MainActivity
      */
     public MainRecyclerAdapter(ArrayList<MoviesResponse.Result> mDataSet, Context mContext) {
         this.mDataSet = mDataSet;
         this.mContext = mContext;
+    }
+
+    /**
+     * This method takes the updates list of movies in adapter data set
+     * @param mDataSet is the list of movies which the specific activity wants to set.
+     */
+    public void setDataSet(ArrayList<MoviesResponse.Result> mDataSet) {
+        this.mDataSet = mDataSet;
     }
 
     @Override
@@ -69,7 +77,7 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerViewHo
     }
 
     /**
-     *
+     * This function is called by Main Activity to load more items into the adapter data set.
      * @param moreMovies will contain the list of additional movies loaded in case of infinite scroll.
      */
     public void loadMore (ArrayList<MoviesResponse.Result> moreMovies){

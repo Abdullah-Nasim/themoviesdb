@@ -26,20 +26,22 @@ public class MoviesDetailsBAL {
             @Override
             public void onResponse(Call<MovieDetailsResponse> call, Response<MovieDetailsResponse> response) {
 
-                //Check if response is successful
+                // Check if response is successful
                 if(response.isSuccessful()) {
 
-                    //Check if response dose not contain empty body
+                    // Check if response dose not contain empty body
                     if (response.body() != null) {
 
-                        //Movie details successfully fetched
+                        // Movie details successfully fetched
                         listener.onMoviesDetailsFetched(response.body());
 
                     } else {
+                        // Movie details not fetched.
                         listener.onMoviesDetailsNotFetched();
                     }
 
                 } else {
+                    // Movie details not fetched.
                     listener.onMoviesDetailsNotFetched();
                 }
 
@@ -50,10 +52,11 @@ public class MoviesDetailsBAL {
 
                 //Check the type of Exception
                 if(t instanceof IllegalArgumentException){
-
+                    // Some other exception.
                     listener.onMoviesDetailsNotFetched();
 
                 } else {
+                    // no internet exception
                     listener.onNetworkFailure();
                 }
 
