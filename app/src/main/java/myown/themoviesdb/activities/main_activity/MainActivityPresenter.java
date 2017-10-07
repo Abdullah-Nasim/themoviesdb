@@ -32,15 +32,14 @@ public class MainActivityPresenter {
         this.filterApplied = filterApplied;
     }
 
-    public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
-    }
-
     /**
      * This method is responsible for calling the Popular Movies BAL ( Business Access Layer ) to call the popular Movies API.
      * This method handles the success and failure cases specific to the network call.
+     * @param swipeRefresh
      */
-    public void performMoviesFetch(){
+    public void performMoviesFetch(final SwipeRefreshLayout swipeRefresh){
+
+        swipeRefresh.setRefreshing(true);
 
         PopularMoviesBAL.getPopularMovies(currentPage, new MoviesFetchListener() {
             /**
@@ -49,6 +48,8 @@ public class MainActivityPresenter {
              */
             @Override
             public void onMoviesFetched(MoviesResponse response) {
+
+                swipeRefresh.setRefreshing(false);
 
                 currentPage = response.getPage();
 
@@ -105,6 +106,8 @@ public class MainActivityPresenter {
                     // Check that if the user reaches the end of scroll.
                     if ( (visibleItemCount + firstVisibleItemPosition) >= totalItemCount)
                     {
+                        swipeRefresh.setRefreshing(true);
+
                         PopularMoviesBAL.getPopularMovies(++currentPage, new MoviesFetchListener() {
 
                             /**
@@ -113,6 +116,8 @@ public class MainActivityPresenter {
                              */
                             @Override
                             public void onMoviesFetched(MoviesResponse response) {
+
+                                swipeRefresh.setRefreshing(false);
 
                                 currentPage = response.getPage();
 
@@ -143,9 +148,9 @@ public class MainActivityPresenter {
 
     }
 
-    public void onSwipeRefresh(SwipeRefreshLayout swipeRefreshLayout){
+    public void onSwipeRefresh(final SwipeRefreshLayout swipeRefresh){
 
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
 
@@ -153,7 +158,7 @@ public class MainActivityPresenter {
 
                 currentPage = 1;
 
-                performMoviesFetch();
+                performMoviesFetch(swipeRefresh);
 
             }
         });

@@ -16,6 +16,8 @@ public class Constants {
 
     public static String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w342/";
 
+    // Keys to the intent extras.
+
     public static String MOVIE_ID_EXTRA_KEY = "Movie_Id";
 
     public static String UN_FILTERED_MOVIE_ARRAY_KEY = "Movies_Array";

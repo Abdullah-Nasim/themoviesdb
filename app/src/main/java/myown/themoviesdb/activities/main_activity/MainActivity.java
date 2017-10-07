@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
 
         mainRecycler.setAdapter(mAdapter);
 
-        swipeRefresh.setRefreshing(false);
     }
 
     /**
@@ -158,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
             if(moviesArray.size()>0) {
                 NavigationController.startMoviesFilterActivity(MainActivity.this, moviesArray);
             }else{
-                Toast.makeText(this,"Movies are still loading!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.movies_still_loading_error, Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -174,14 +173,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
         // Setting the filter applied to tell the presenter that filter is not applied yet.
         mainActivityPresenter.setFilterApplied(false);
 
-        // Setting the swipe layout refreshing till the movies are fetched
-        swipeRefresh.setRefreshing(true);
-
         // Setting up the layout manager for thr main recycler
         mLayoutManager = new GridLayoutManager(MainActivity.this, 2, GridLayoutManager.VERTICAL, false);
 
         // Calling the presenter to perform movies fetch
-        mainActivityPresenter.performMoviesFetch();
+        mainActivityPresenter.performMoviesFetch(swipeRefresh);
 
         // Calling the presenter to setup on scroll change listener
         mainActivityPresenter.loadMoreMovieItems(mainRecycler,swipeRefresh,mLayoutManager);

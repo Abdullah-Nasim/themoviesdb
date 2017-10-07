@@ -18,4 +18,5 @@
     <string name="max_year">Max Year</string>
     <string name="apply">APPLY</string>
     <string name="the_movie_db_logo">The Movie DB Logo</string>
+    <string name="movies_still_loading_error">Movies are still loading!</string>
 </resources>

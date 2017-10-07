@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -80,14 +81,24 @@ public class FilterActivity extends AppCompatActivity implements FilterActivityV
     @Override
     public void onYearsListSorted(ArrayList<String> yearsArray) {
 
+        ArrayList<String> yearsArrayDes = new ArrayList<>(yearsArray);
+
+        // Reversing the array for Making it in descending order.
+        Collections.reverse(yearsArrayDes);
+
+        // Initializing spinner adapters.
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, yearsArray);
 
+        ArrayAdapter<String> spinnerAdapterMax = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, yearsArrayDes);
+
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerAdapterMax.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Setting up spinners adapters.
         minYearSpinner.setAdapter(spinnerAdapter);
 
-        maxYearSpinner.setAdapter(spinnerAdapter);
+        maxYearSpinner.setAdapter(spinnerAdapterMax);
 
     }
 
