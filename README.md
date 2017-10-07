@@ -23,7 +23,7 @@ This project is using TMDB API as a base to list down popular movies. User has o
 
 So, essentially when the movies are loaded they are added into one dataset and upon filteration that dataset is being filtered by the application.
 
-Infinite scroll and pagination are one of the silent features of this application.
+Infinite scroll and pagination are one of the silent features of this application. After the filter application pull swipe to refresh in order to unlock pagination.
 
 # Known Issues
 
