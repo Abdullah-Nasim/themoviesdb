@@ -23,7 +23,13 @@ This project is using TMDB API as a base to list down popular movies. User has o
 
 So, essentially when the movies are loaded they are added into one dataset and upon filteration that dataset is being filtered by the application.
 
-Infinite scroll and pagination are one of the silent features of this application. After the filter application pull swipe to refresh in order to unlock pagination.
+Infinite scroll and pagination are one of the silent features of this application. After the filter application pull swipe to refresh in order to unlock pagination
+
+# MVP
+
+The MPV pattren is used to develop this application. In each activity package you can find a presentaion layer for that particular activity. All of the applicaation loginc and functionality about any particular activity is implemented it's respective layer. So, if there is any change in future or some additional functionality we shall be about where exactly the change is going to happen in the code.
+
+Using MVP pattren makes this application highly extensible and maintainable.
 
 # Known Issues
 
