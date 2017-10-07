@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     @Override
     public void onMoviesFetched(MoviesResponse response) {
 
-        // Initializing moviesArray. This array will hold the complete list of movies loaded till this activity is running.
+        // In case of refresh after filtered applied. Re - Initializing the empty array to free the previously used memory.
         moviesArray = new ArrayList<>();
 
         moviesArray = response.getResults();
@@ -175,6 +175,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
 
         // Setting up the layout manager for thr main recycler
         mLayoutManager = new GridLayoutManager(MainActivity.this, 2, GridLayoutManager.VERTICAL, false);
+
+        // Initializing moviesArray. This array will hold the complete list of movies loaded till this activity is running.
+        moviesArray = new ArrayList<>();
 
         // Calling the presenter to perform movies fetch
         mainActivityPresenter.performMoviesFetch(swipeRefresh);
