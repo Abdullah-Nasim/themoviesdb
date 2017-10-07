@@ -27,7 +27,7 @@ Infinite scroll and pagination are one of the silent features of this applicatio
 
 # MVP
 
-The MPV pattren is used to develop this application. In each activity package you can find a presentaion layer for that particular activity. All of the applicaation loginc and functionality about any particular activity is implemented it's respective layer. So, if there is any change in future or some additional functionality we shall be about where exactly the change is going to happen in the code.
+The MPV pattren is used to develop this application. In each activity package you can find a presentaion layer for that particular activity. All of the applicaation logic and functionality about any particular activity is implemented in it's respective layer. So, if there is any change in future or some additional functionality we shall be sure about where exactly the change is going to happen in the code.
 
 Using MVP pattren makes this application highly extensible and maintainable.
 
